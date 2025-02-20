@@ -1,0 +1,8 @@
+, "Total" , "Without Children" , "With Children and Adults" , "With Only Children" , "Unknown Household Type" 
+"""Within the past three months""",4,1,3,0,0
+"""Three to six months ago """,3,1,2,0,0
+"""Six months to one year""",2,1,1,0,0
+"""One year ago, or more""",7,5,2,0,0
+"""Client Doesn't Know/Prefers Not to Answer""",0,0,0,0,0
+"""Data Not Collected""",0,0,0,0,0
+"""Total""",16,8,8,0,0

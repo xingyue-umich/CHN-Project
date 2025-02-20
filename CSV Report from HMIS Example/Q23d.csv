@@ -1,0 +1,13 @@
+, "Total" , "Without Children" , "With Children and Adults" , "With Only Children" , "Unknown Household Type" 
+"""GPD TIP housing subsidy """,0,0,0,0,0
+"""VASH housing subsidy """,0,0,0,0,0
+"""RRH or equivalent subsidy """,0,0,0,0,0
+"""HCV voucher (tenant or project based) (not dedicated) """,0,0,0,0,0
+"""Public housing unit""",0,0,0,0,0
+"""Rental by client, with other ongoing housing subsidy""",0,0,0,0,0
+"""Housing Stability Voucher""",0,0,0,0,0
+"""Family Unification Program Voucher (FUP)""",0,0,0,0,0
+"""Foster Youth to Independence Initiative (FYI)""",0,0,0,0,0
+"""Permanent Supportive Housing""",0,0,0,0,0
+"""Other permanent housing dedicated for formerly homeless persons""",0,0,0,0,0
+"""Total""",0,0,0,0,0

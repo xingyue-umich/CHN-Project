@@ -1,0 +1,10 @@
+, "Total" , "Without Children" , "With Children and Adults" , "With Only Children" , "Unknown Household Type" 
+"""Heterosexual""",1,1,0,0,0
+"""Gay""",0,0,0,0,0
+"""Lesbian""",0,0,0,0,0
+"""Bisexual""",0,0,0,0,0
+"""Questioning/Unsure""",0,0,0,0,0
+"""Other""",0,0,0,0,0
+"""Client Doesn't Know/Prefers Not to Answer""",0,0,0,0,0
+"""Data not collected""",24,16,8,0,0
+"""Total""",25,17,8,0,0

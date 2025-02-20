@@ -1,0 +1,26 @@
+ "Current school and attendance" , "At Project Start" , "At Project Exit" 
+"""Not currently enrolled in any school or education course""",0,0
+"""Currently enrolled but not attending regularly""",0,0
+"""Currently enrolled and attending regularly""",0,0
+"""Client Doesn't Know / Prefers Not to Answer""",0,0
+"""Data not collected""",0,0
+"""For those not enrolled - most recent education status""",0,0
+"""K12: Graduated from high school""",0,0
+"""K12: Obtained GED""",0,0
+"""K12: Dropped out""",0,0
+"""K12: Suspended""",0,0
+"""K12: Expelled""",0,0
+"""Higher education: Pursuing a credential but not currently attending""",0,0
+"""Higher education: Dropped out""",0,0
+"""Higher education: Obtained a credential/degree""",0,0
+"""Client Doesn't Know/Prefers Not to Answer""",0,0
+"""Data not collected""",0,0
+"""For those currently enrolled - current status""",0,0
+"""Pursuing a high school diploma or GED""",0,0
+"""Pursuing Associate Degree""",0,0
+"""Pursuing Bachelor Degree""",0,0
+"""Pursuing Graduate Degree""",0,0
+"""Pursuing other post-secondary credential""",0,0
+"""Client Doesn't Know/Prefers Not to Answer""",0,0
+"""Data not collected""",0,0
+"""Total persons""",0,0

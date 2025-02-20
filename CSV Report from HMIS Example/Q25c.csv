@@ -1,0 +1,33 @@
+, "Total" , "Without Children" , "With Children and Adults" , "Unknown Household Type" 
+"""Woman""",0,0,0,0
+"""Man""",1,1,0,0
+"""Culturally Specific Identity""",0,0,0,0
+"""Transgender""",0,0,0,0
+"""Non-Binary""",0,0,0,0
+"""Questioning""",0,0,0,0
+"""Different Identity""",0,0,0,0
+"""Woman/Man""",0,0,0,0
+"""Woman/Culturally Specific Identity""",0,0,0,0
+"""Woman/Transgender """,0,0,0,0
+"""Woman/Non-Binary""",0,0,0,0
+"""Woman/Questioning""",0,0,0,0
+"""Woman/Different Identity""",0,0,0,0
+"""Man/Culturally Specific Identity""",0,0,0,0
+"""Man/Transgender""",0,0,0,0
+"""Man/Non-Binary""",0,0,0,0
+"""Man/Questioning""",0,0,0,0
+"""Man/Different Identity""",0,0,0,0
+"""Culturally Specific Identity/Transgender""",0,0,0,0
+"""Culturally Specific Identity/Non-Binary""",0,0,0,0
+"""Culturally Specific Identity/Questioning""",0,0,0,0
+"""Culturally Specific Identity/Different Identity""",0,0,0,0
+"""Transgender/Non-Binary""",0,0,0,0
+"""Transgender/Questioning""",0,0,0,0
+"""Transgender/Different Identity""",0,0,0,0
+"""Non-Binary/Questioning""",0,0,0,0
+"""Non-Binary/Different Identity""",0,0,0,0
+"""Questioning/Different Identity""",0,0,0,0
+"""More than 2 Gender Identities Selected""",0,0,0,0
+"""Client Doesn't Know/Prefers Not to Answer""",0,0,0,0
+"""Data Not Collected""",0,0,0,0
+"""Total""",1,1,0,0
