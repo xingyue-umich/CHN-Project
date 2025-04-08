@@ -58,4 +58,4 @@ months_homeless_combined = pd.concat(months_homeless_allcounts, ignore_index=Tru
 with pd.ExcelWriter("./BoSClean/homelessness.xlsx") as writer:
     prior_living_combined.to_excel(writer, sheet_name='Prior Living', index=False)
     times_homeless_combined.to_excel(writer, sheet_name='Times Homeless in 3 years', index=False)
-    times_homeless_combined.to_excel(writer, sheet_name='Months Homeless in 3 years', index=False)
+    months_homeless_combined.to_excel(writer, sheet_name='Months Homeless in 3 years', index=False)
