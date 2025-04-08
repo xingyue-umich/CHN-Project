@@ -2,13 +2,17 @@ import pandas as pd
 import os
 
 # Folder with all your Excel files
-folder_path = "../BoS (Business Objects) Raw Data Reports - Deidentified"
+folder_path = "./BoS (Business Objects) Raw Data Reports - Deidentified"
 
 # Initialize a list to collect all counts
 all_counts = []
 
 # Loop through all Excel files in the folder
 for file in os.listdir(folder_path):
+    
+    if file == "TEMPLATE RAW Client Data Export v3_EE Workflow.xlsx":
+        continue  # Skip this specific file
+    
     if file.endswith(".xlsx"):
         file_path = os.path.join(folder_path, file)
         program_name = file.split(" ")[0]  # Extract 'Program' from filename
@@ -40,6 +44,6 @@ combined_df = pd.concat(all_counts, ignore_index=True)
 
 # Export to Excel
 # combined_df.to_csv("all_disability_counts.csv", index=False)
-combined_df.to_excel("all_disability_counts.xlsx", index=False)
+combined_df.to_excel("./BoSClean/all_disability_counts.xlsx", index=False)
 
 print("✅ Combined disability counts saved to both CSV and Excel.")
