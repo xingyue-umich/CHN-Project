@@ -34,10 +34,10 @@ for file in os.listdir(folder_path):
             entry_exit['type'] = entry_exit['Exit Date'].eq(today).map({True: 'Stayers', False: 'Leavers'})
 
             # Calculate 'Stay of length' in days
-            entry_exit['Stay of length'] = (entry_exit['Exit Date'] - entry_exit['Entry Date']).dt.days
+            entry_exit['Length of stay'] = (entry_exit['Exit Date'] - entry_exit['Entry Date']).dt.days
 
-            # Keep only the 4 relevant columns
-            entry_exit = entry_exit[['Entry Date', 'Exit Date', 'type', 'Stay of length']]
+            # Keep only the 2 relevant columns
+            entry_exit = entry_exit[['type', 'Length of stay']]
             
             entry_exit['Program'] = program_name
             
