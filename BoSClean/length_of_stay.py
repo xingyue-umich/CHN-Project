@@ -46,7 +46,11 @@ for file in os.listdir(folder_path):
                 'OC': 'Oakland PATH',
                 'MC': 'Macomb PATH',
                 'Eric': 'Erin Park',
-                'SPC': 'Shelter Plus Care'
+                'SPC': 'Shelter Plus Care',
+                '143': '143',
+                '1371': '1371',
+                '8319': '8319',
+                '11495':'11495'
             }
 
             # Apply mapping to the 'program' column
