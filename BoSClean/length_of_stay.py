@@ -45,7 +45,7 @@ for file in os.listdir(folder_path):
             program_mapping = {
                 'OC': 'Oakland PATH',
                 'MC': 'Macomb PATH',
-                'Eric': 'Erin Park',
+                'Erin': 'Erin Park',
                 'SPC': 'Shelter Plus Care',
                 '143': '143',
                 '1371': '1371',
