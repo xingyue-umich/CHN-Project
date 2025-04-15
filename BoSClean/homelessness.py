@@ -78,11 +78,17 @@ def clean_homelessness():
                 prior_living_counts = df.groupby(["Provider Abbrev", "Provider Tree"])['Prior Living Situation'].value_counts(dropna=True).reset_index(name="Count")
                 times_homeless_counts = df.groupby(["Provider Abbrev", "Provider Tree"])['Times Homeless in 3 years'].value_counts(dropna=True).reset_index(name="Count")
                 months_homeless_counts = df.groupby(["Provider Abbrev", "Provider Tree"])['Months Homeless in 3 years'].value_counts(dropna=True).reset_index(name="Count")
-
+                
+                months_homeless_counts["Category"] = months_homeless_counts["Months Homeless in 3 years"].apply(
+                    lambda x: "More than 12" if x == "More than 12" else "Less than 12"
+                )
+                
                 prior_living_allcounts.append(prior_living_counts)
                 times_homeless_allcounts.append(times_homeless_counts)
                 months_homeless_allcounts.append(months_homeless_counts)
-            
+                
+
+
             except Exception as e:
                 print(f"Could not process Entry tab in {file}: {e}")
 
