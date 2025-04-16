@@ -47,7 +47,7 @@ def get_provider_info(ee_provider_id):
         
         "MDHHS - Community Housing Network, Inc. - Oakland CoC - Shelter Plus Care Program(3056)" : {
             "abbrev": "SPC",
-            "tree": "143"             
+            "tree": "3055"             
         },
         
         "Community Housing Network, Inc. - Macomb CoC -  RRH - MSHDA ESG(14415)" : {

@@ -87,11 +87,8 @@ def clean_homelessness():
                 times_homeless_allcounts.append(times_homeless_counts)
                 months_homeless_allcounts.append(months_homeless_counts)
                 
-
-
             except Exception as e:
                 print(f"Could not process Entry tab in {file}: {e}")
-
 
     # Write results to Excel
     with pd.ExcelWriter(output_path) as writer:
