@@ -75,6 +75,10 @@ def clean_homelessness():
                 df = df.fillna("Not Specified")
                 
                 # Group by Provider Abbrev + Tree and count Disability Determination values
+                df["Prior Living Situation"] = df["Prior Living Situation"].astype(str)
+                df["Times Homeless in 3 years"] = df["Times Homeless in 3 years"].astype(str)
+                df["Months Homeless in 3 years"] = df["Months Homeless in 3 years"].astype(str)
+
                 prior_living_counts = df.groupby(["Provider Abbrev", "Provider Tree"])['Prior Living Situation'].value_counts(dropna=True).reset_index(name="Count")
                 times_homeless_counts = df.groupby(["Provider Abbrev", "Provider Tree"])['Times Homeless in 3 years'].value_counts(dropna=True).reset_index(name="Count")
                 months_homeless_counts = df.groupby(["Provider Abbrev", "Provider Tree"])['Months Homeless in 3 years'].value_counts(dropna=True).reset_index(name="Count")
@@ -88,7 +92,7 @@ def clean_homelessness():
                 months_homeless_allcounts.append(months_homeless_counts)
                 
             except Exception as e:
-                print(f"Could not process Entry tab in {file}: {e}")
+                print(f"⚠️ Could not process EE UDES tab in {file}: {e}")
 
     # Write results to Excel
     with pd.ExcelWriter(output_path) as writer:

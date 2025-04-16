@@ -24,7 +24,7 @@ def get_provider_info(ee_provider_id):
             "abbrev": "MLAP7",
             "tree": "1371"
         },
-        
+
         "Community Housing Network, Inc. - Out Wayne - Chronically Homeless Leasing Assistance Program 1(11496)" : {
             "abbrev": "WCHLAP1",
             "tree": "11495"
