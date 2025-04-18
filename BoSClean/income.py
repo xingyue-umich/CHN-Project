@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from IdMapping import clean_provider_ids
+from add_UID import add_uid_column
 
 def clean_income():
     folder_path = "./BoS (Business Objects) Raw Data Reports - Deidentified"
@@ -29,7 +30,6 @@ def clean_income():
                 # Clean EE Provider IDs (adds 'Provider Abbrev' and 'Provider Tree')
                 income_ent = clean_provider_ids(income_ent)
                 income_ext = clean_provider_ids(income_ext)
-
                 
                 # --- PERCENTAGE ---
                 # Group and calculate % of 'Yes' for ENTRY
@@ -59,6 +59,8 @@ def clean_income():
                 grouped_ext_pct["Assessment Stage"] = "Exit"
 
                 combined_pct = pd.concat([grouped_ent_pct, grouped_ext_pct], ignore_index=True)
+                # add UID
+                combined_pct = add_uid_column(combined_pct)
                 all_pct.append(combined_pct)
                 
                 # --- COUNTS ---
@@ -84,6 +86,8 @@ def clean_income():
                 grouped_ext_count = grouped_ext_count.rename(columns={"Receiving Income (Exit)": "Receiving Income"})
 
                 combined_count = pd.concat([grouped_ent_count, grouped_ext_count], ignore_index=True)
+                # add UID
+                combined_count = add_uid_column(combined_count)
                 all_counts.append(combined_count)
                 
                 # === Income medians ===
@@ -107,7 +111,9 @@ def clean_income():
                     .rename(columns={"Monthly Income Amount (Exit)": "Median Income"})
                 )
                 median_ext["Assessment Stage"] = "Exit"
-                
+                # add UID
+                median_ent = add_uid_column(median_ent)
+                median_ext = add_uid_column(median_ext)
                 income_medians.append(pd.concat([median_ent, median_ext], ignore_index=True))
 
                 # === NON-CASH ===
@@ -145,6 +151,7 @@ def clean_income():
 
                 # Combine and append to master results
                 combined_noncash_pct = pd.concat([grouped_ent_noncash, grouped_ext_noncash], ignore_index=True)
+                combined_noncash_pct = add_uid_column(combined_noncash_pct)
                 noncash_results.append(combined_noncash_pct)
 
             except Exception as e:

@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from IdMapping import clean_provider_ids
+from add_UID import add_uid_column
 
 def clean_disability():
     folder_path = "./BoS (Business Objects) Raw Data Reports - Deidentified"
@@ -35,6 +36,7 @@ def clean_disability():
                 # Rename columns
                 grouped_entry.rename(columns={"Disability Determination (Entry)": "Disability Status"}, inplace=True)
                 grouped_entry["Assessment Stage"] = "Entry"
+                grouped_entry = add_uid_column(grouped_entry)
                 all_counts.append(grouped_entry)
                 
             except Exception as e:
@@ -55,6 +57,7 @@ def clean_disability():
                 )
                 grouped_exit.rename(columns={"Disability Determination (Exit)": "Disability Status"}, inplace=True)
                 grouped_exit["Assessment Stage"] = "Exit"
+                grouped_exit = add_uid_column(grouped_exit)
                 all_counts.append(grouped_exit)
                 
             except Exception as e:

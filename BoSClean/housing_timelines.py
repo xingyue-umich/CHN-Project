@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from IdMapping import clean_provider_ids
+from add_UID import add_uid_column
 
 def process_length_and_movein():
     """
@@ -34,6 +35,7 @@ def process_length_and_movein():
                 df = pd.read_excel(file_path, sheet_name="ENTRY-EXIT")
                 # Clean EE Provider ID
                 df = clean_provider_ids(df)
+                df = add_uid_column(df)
                 
                 if 'Entry Date' not in df.columns or 'Exit Date' not in df.columns:
                     print(f"⚠️ Missing Entry/Exit Date columns in {file}")
@@ -51,7 +53,7 @@ def process_length_and_movein():
                 default_exit_date = pd.to_datetime('2024-09-30')
                 df['Exit Date'] = df['Exit Date'].fillna(default_exit_date)
                 df['Length of Stay'] = (df['Exit Date'] - df['Entry Date']).dt.days
-                length_of_stay.append(df[['Entry Date', 'Exit Date', 'Length of Stay', 'Provider Abbrev', 'Provider Tree']])
+                length_of_stay.append(df[['Entry Date', 'Exit Date', 'Length of Stay', 'Provider Abbrev', 'Provider Tree', 'UID']])
 
                 # Days to Housing Move-In
                 df['Days_to_MoveIn'] = (df['Housing Move-in Date'] - df['Entry Date']).dt.days
@@ -60,7 +62,7 @@ def process_length_and_movein():
                     (df['Days_to_MoveIn'] > 0) & 
                     (df['Housing Move-in Date'].notna())
                 ]
-                days_to_movein.append(valid_cases[['Entry Date', 'Housing Move-in Date', 'Days_to_MoveIn', 'Provider Abbrev', 'Provider Tree']])
+                days_to_movein.append(valid_cases[['Entry Date', 'Housing Move-in Date', 'Days_to_MoveIn', 'Provider Abbrev', 'Provider Tree', 'UID']])
 
             except Exception as e:
                 print(f"⚠️ Could not process Entry-Exit tab in {file}: {e}")

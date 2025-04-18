@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from IdMapping import clean_provider_ids
+from add_UID import add_uid_column
 
 def calculate_permanent_exit():
     """
@@ -42,6 +43,8 @@ def calculate_permanent_exit():
                 df = pd.read_excel(file_path, sheet_name="ENTRY-EXIT")
                 # Clean EE Provider ID
                 df = clean_provider_ids(df)
+                # Add UID
+                df = add_uid_column(df)
                 
                 if 'Destination' not in df.columns:
                     print(f"⚠️ Missing Destination column in {file}")
@@ -57,7 +60,7 @@ def calculate_permanent_exit():
                 )
                 
                 permanent_housing_data.append(
-                    df[['Destination', 'permanent_housing', 'Provider Abbrev', 'Provider Tree']]
+                    df[['Destination', 'permanent_housing', 'Provider Abbrev', 'Provider Tree', 'UID']]
                 )
 
             except Exception as e:

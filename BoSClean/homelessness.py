@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from IdMapping import clean_provider_ids
+from add_UID import add_uid_column
 
 def clean_homelessness():
     """
@@ -86,6 +87,10 @@ def clean_homelessness():
                 months_homeless_counts["Category"] = months_homeless_counts["Months Homeless in 3 years"].apply(
                     lambda x: "More than 12" if x == "More than 12" else "Less than 12"
                 )
+                
+                prior_living_counts = add_uid_column(prior_living_counts)
+                times_homeless_counts = add_uid_column(times_homeless_counts)
+                months_homeless_counts = add_uid_column(months_homeless_counts)
                 
                 prior_living_allcounts.append(prior_living_counts)
                 times_homeless_allcounts.append(times_homeless_counts)
